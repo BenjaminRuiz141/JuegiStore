@@ -6,7 +6,8 @@ import Contacto from './components/Contacto.jsx'
 import Footer from './components/Footer.jsx'
 
 /**
- * Componente Principal App
+ * Componente Principal App:
+ * Gestiona el estado global (videojuegos, carrito, filtro activo) y la carga de datos.
  */
 function App() {
   const [productos, setProductos] = useState([])
@@ -15,12 +16,12 @@ function App() {
   const [cargando, setCargando] = useState(true)
   const [error, setError] = useState(null)
 
-  // Carga los productos al montar el componente
+  // Carga dinámica de videojuegos desde el archivo JSON al montar el componente
   useEffect(() => {
     fetch('./productos.json')
       .then((respuesta) => {
         if (!respuesta.ok) {
-          throw new Error('No se pudo cargar el archivo de productos')
+          throw new Error('No se pudo cargar el archivo de videojuegos.')
         }
         return respuesta.json()
       })
@@ -29,58 +30,63 @@ function App() {
         setCargando(false)
       })
       .catch((err) => {
-        console.error('Error al obtener productos:', err)
-        setError('Ocurrió un error al cargar los productos. Intenta nuevamente más tarde.')
+        console.error('Error al obtener los videojuegos:', err)
+        setError('Ocurrió un error al cargar el catálogo de videojuegos. Intenta nuevamente.')
         setCargando(false)
       })
   }, [])
 
-  // 3. FUNCIONES PARA MODIFICAR EL ESTADO DEL CARRITO
-  // Agrega un producto seleccionado al carrito
+  // Agrega un videojuego al carrito
   const agregarAlCarrito = (producto) => {
     setCarrito((carritoActual) => [...carritoActual, producto])
   }
 
-  // Elimina un producto del carrito segun su posicion en la lista
+  // Elimina un videojuego del carrito según su índice
   const eliminarDelCarrito = (indiceAEliminar) => {
     setCarrito((carritoActual) =>
       carritoActual.filter((_, indice) => indice !== indiceAEliminar)
     )
   }
 
-  // Vacia por completo el carrito de compras
+  // Vacía por completo el carrito de compras
   const vaciarCarrito = () => {
     setCarrito([])
   }
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      {/* Barra de navegacion con contador del carrito */}
-      <Navbar
-        totalCarrito={carrito.length}
-        categoriaActiva={categoria}
-        onSeleccionarCategoria={setCategoria}
-      />
+      {/* Encabezado semántico con barra de navegación */}
+      <header>
+        <Navbar totalCarrito={carrito.length} />
+      </header>
 
-      {/* Contenido Principal */}
-      <main className="container py-5">
-        {/* Mensaje en caso de error */}
+      {/* Contenedor principal semántico */}
+      <main className="container py-4">
+        {/* Banner de bienvenida sobrio */}
+        <div className="p-4 p-md-5 mb-4 rounded bg-dark border border-secondary text-center">
+          <h1 className="display-6 fw-bold text-info mb-2">Bienvenido a JuegiStore</h1>
+          <p className="lead text-secondary mb-0">
+            Tu tienda favorita de videojuegos para PC y consolas. Encuentra los títulos más aclamados al mejor precio.
+          </p>
+        </div>
+
+        {/* Mensaje de error si falla la carga */}
         {error && (
           <div className="alert alert-danger shadow-sm mb-4" role="alert">
             {error}
           </div>
         )}
 
-        {/* Indicador de carga */}
+        {/* Indicador de carga dinámico */}
         {cargando ? (
           <div className="text-center py-5">
             <div className="spinner-border text-info" role="status">
               <span className="visually-hidden">Cargando catálogo...</span>
             </div>
-            <p className="text-secondary mt-3">Cargando productos...</p>
+            <p className="text-secondary mt-3">Cargando videojuegos...</p>
           </div>
         ) : (
-          /* Catalogo de productos */
+          /* Catálogo de videojuegos con filtrado */
           <Catalogo
             productos={productos}
             carrito={carrito}
@@ -90,18 +96,18 @@ function App() {
           />
         )}
 
-        {/* Seccion del Carrito de Compras */}
+        {/* Sección del Carrito de Compras */}
         <Carrito
           carrito={carrito}
           onEliminar={eliminarDelCarrito}
           onVaciar={vaciarCarrito}
         />
 
-        {/* Seccion de Contacto */}
+        {/* Formulario de Contacto interactivo */}
         <Contacto />
       </main>
 
-      {/* Pie de pagina */}
+      {/* Pie de página semántico */}
       <Footer />
     </div>
   )

@@ -1,19 +1,20 @@
 import React from 'react'
 
 /**
- * Componente Carrito: Gestiona la lista de compras del usuario.
+ * Componente Carrito: Permite al usuario revisar sus videojuegos seleccionados,
+ * eliminar ítems individuales, vaciar la lista y ver el costo total.
  */
 function Carrito({ carrito, onEliminar, onVaciar }) {
-  // Calculo del total acumulado de los productos en el carrito
+  // Cálculo del total acumulado en el carrito
   const total = carrito.reduce((acumulador, item) => acumulador + item.precio, 0)
 
   return (
     <section id="seccion-carrito" className="mb-5">
       <div className="card cart-card p-4 shadow-sm">
         <div className="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-          <h3 className="h4 fw-bold mb-0">🛒 Carrito de Compras</h3>
+          <h3 className="h4 fw-bold mb-0">Carrito de Compras</h3>
 
-          {/* Boton para vaciar el carrito */}
+          {/* Botón para vaciar el carrito */}
           <button
             className="btn btn-outline-secondary btn-sm"
             onClick={onVaciar}
@@ -23,11 +24,11 @@ function Carrito({ carrito, onEliminar, onVaciar }) {
           </button>
         </div>
 
-        {/* Lista de productos en el carrito */}
+        {/* Lista de videojuegos en el carrito */}
         <ul className="list-group list-group-flush mb-3">
           {carrito.length === 0 ? (
             <li className="list-group-item cart-item text-secondary py-3 text-center">
-              El carrito está vacío.
+              El carrito está vacío. Agrega tus videojuegos favoritos desde el catálogo.
             </li>
           ) : (
             carrito.map((item, index) => (
@@ -37,18 +38,18 @@ function Carrito({ carrito, onEliminar, onVaciar }) {
               >
                 <div>
                   <span className="fw-semibold text-light">{item.nombre}</span>
+                  <span className="badge bg-secondary ms-2 small">{item.categoria}</span>
                   <span className="d-block text-secondary small">
                     ${item.precio.toLocaleString('es-CL')}
                   </span>
                 </div>
 
-                {/* Boton para eliminar un producto individual del carrito */}
+                {/* Botón para quitar el ítem */}
                 <button
-                  className="btn btn-outline-danger btn-sm py-0 px-2"
-                  title="Quitar producto"
+                  className="btn btn-outline-danger btn-sm"
                   onClick={() => onEliminar(index)}
                 >
-                  &times;
+                  Eliminar
                 </button>
               </li>
             ))
