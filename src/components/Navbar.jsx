@@ -1,20 +1,19 @@
 import React from 'react'
 
 /**
- * Componente Navbar: Barra de navegacion superior.
- * Recibe el total de productos en el carrito y la categoria activa.
+ * Componente Navbar: Barra de navegación superior responsive.
+ * Muestra las secciones principales y el contador del carrito.
  */
-function Navbar({ totalCarrito, categoriaActiva, onSeleccionarCategoria }) {
-  const categorias = ['Todas', 'Consolas', 'Accesorios', 'Periféricos']
-
+function Navbar({ totalCarrito }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-custom sticky-top shadow-sm">
       <div className="container">
+        {/* Marca del sitio */}
         <a className="navbar-brand fw-bold" href="#catalogo">
-          Tienda <span className="brand-accent">JuegosxChile</span>
+          <span className="brand-accent">Juegi</span>Store
         </a>
 
-        {/* Boton para menu responsive en moviles */}
+        {/* Botón responsive para móviles */}
         <button
           className="navbar-toggler"
           type="button"
@@ -22,27 +21,19 @@ function Navbar({ totalCarrito, categoriaActiva, onSeleccionarCategoria }) {
           data-bs-target="#navbarContenido"
           aria-controls="navbarContenido"
           aria-expanded="false"
-          aria-label="Alternar navegacion"
+          aria-label="Alternar navegación"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarContenido">
-          {/* Categorias del catalogo */}
+          {/* Enlaces de navegación y filtros */}
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            {categorias.map((cat) => (
-              <li className="nav-item" key={cat}>
-                <button
-                  type="button"
-                  className={`nav-link btn btn-link text-decoration-none ${
-                    categoriaActiva === cat ? 'active text-info fw-bold' : ''
-                  }`}
-                  onClick={() => onSeleccionarCategoria(cat)}
-                >
-                  {cat === 'Todas' ? 'Catálogo' : cat}
-                </button>
-              </li>
-            ))}
+            <li className="nav-item">
+              <a className="nav-link" href="#catalogo">
+                Catálogo
+              </a>
+            </li>
             <li className="nav-item">
               <a className="nav-link" href="#contacto">
                 Contacto
@@ -50,14 +41,14 @@ function Navbar({ totalCarrito, categoriaActiva, onSeleccionarCategoria }) {
             </li>
           </ul>
 
-          {/* Boton y contador del Carrito */}
+          {/* Acceso directo al Carrito de compras */}
           <div className="ms-lg-3 mt-2 mt-lg-0">
             <a
               href="#seccion-carrito"
               className="btn btn-outline-light position-relative"
               title="Ver carrito de compras"
             >
-              🛒 Carrito
+              Carrito
               <span className="badge bg-danger rounded-pill ms-2">
                 {totalCarrito}
               </span>
