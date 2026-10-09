@@ -118,10 +118,9 @@ function Contacto() {
               type="text"
               id="nombre"
               name="nombre"
-              className={`form-control bg-dark text-light border-secondary ${
-                errores.nombre ? 'is-invalid' : ''
-              }`}
-              placeholder="Ej: Benjamin Ruiz"
+              className={`form-control bg-dark text-light border-secondary ${errores.nombre ? 'is-invalid' : ''
+                }`}
+              placeholder="Ej: Juan Perez"
               value={formulario.nombre}
               onChange={handleChange}
             />
@@ -139,9 +138,8 @@ function Contacto() {
               type="email"
               id="email"
               name="email"
-              className={`form-control bg-dark text-light border-secondary ${
-                errores.email ? 'is-invalid' : ''
-              }`}
+              className={`form-control bg-dark text-light border-secondary ${errores.email ? 'is-invalid' : ''
+                }`}
               placeholder="nombre@ejemplo.com"
               value={formulario.email}
               onChange={handleChange}
@@ -160,9 +158,8 @@ function Contacto() {
               id="mensaje"
               name="mensaje"
               rows="4"
-              className={`form-control bg-dark text-light border-secondary ${
-                errores.mensaje ? 'is-invalid' : ''
-              }`}
+              className={`form-control bg-dark text-light border-secondary ${errores.mensaje ? 'is-invalid' : ''
+                }`}
               placeholder="Escribe tu consulta o duda sobre algún videojuego..."
               value={formulario.mensaje}
               onChange={handleChange}
