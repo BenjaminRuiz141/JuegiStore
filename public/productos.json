@@ -1,50 +1,58 @@
 [
   {
     "id": 1,
-    "nombre": "PlayStation 5 Digital Edition",
-    "categoria": "Consolas",
-    "precio": 549990,
-    "descripcion": "Consola de última generación con gráficos 4K y SSD ultrarrápido.",
-    "imagen": "assets/img/imagen-ps5.webp"
+    "nombre": "God of War Ragnarök",
+    "categoria": "Acción",
+    "precio": 49990,
+    "descripcion": "Acompaña a Kratos y Atreus en un viaje mítico en busca de respuestas antes del profetizado Ragnarök.",
+    "imagen": "./assets/img/god-of-war.jpg"
   },
   {
     "id": 2,
-    "nombre": "PlayStation 5 Estándar con Lector",
-    "categoria": "Consolas",
-    "precio": 599990,
-    "descripcion": "Incluye lector de discos Blu-Ray Ultra HD y mando DualSense inalámbrico.",
-    "imagen": "assets/img/imagen-ps5.webp"
+    "nombre": "Marvel's Spider-Man Remastered",
+    "categoria": "Acción",
+    "precio": 39990,
+    "descripcion": "Combate el crimen callejero y a icónicos villanos columpiándote por las calles de Nueva York.",
+    "imagen": "./assets/img/spiderman.jpg"
   },
   {
     "id": 3,
-    "nombre": "Control Inalámbrico Xbox Robot White",
-    "categoria": "Accesorios",
-    "precio": 74990,
-    "descripcion": "Diseño ergonómico, agarre texturizado y conexión Bluetooth para PC y consola.",
-    "imagen": "assets/img/imagen-control-xbox.png"
+    "nombre": "Red Dead Redemption 2",
+    "categoria": "Aventura",
+    "precio": 34990,
+    "descripcion": "Una épica aventura en el salvaje oeste estadounidense con un mundo abierto vivo y detallado.",
+    "imagen": "./assets/img/red-dead-redemption-2.jpg"
   },
   {
     "id": 4,
-    "nombre": "Control Inalámbrico Xbox Carbon Black",
-    "categoria": "Accesorios",
-    "precio": 79990,
-    "descripcion": "Botón para compartir contenido al instante y cruceta híbrida precisa.",
-    "imagen": "assets/img/imagen-control-xbox.png"
+    "nombre": "Hogwarts Legacy",
+    "categoria": "Aventura",
+    "precio": 42990,
+    "descripcion": "Explora el castillo de Hogwarts y el mundo mágico en un juego de rol de acción inmersivo en el siglo XIX.",
+    "imagen": "./assets/img/hogwarts-legacy.jpg"
   },
   {
     "id": 5,
-    "nombre": "Headset Gamer HyperX Cloud II",
-    "categoria": "Periféricos",
-    "precio": 64990,
-    "descripcion": "Sonido envolvente 7.1 virtual, almohadillas viscoelásticas y micrófono extraíble.",
-    "imagen": "assets/img/imagen-headset-gamer.webp"
+    "nombre": "Elden Ring",
+    "categoria": "RPG",
+    "precio": 44990,
+    "descripcion": "Levántate, Sinluz, y sé guiado por la gracia para blandir el poder del Círculo de Elden en las Tierras Intermedias.",
+    "imagen": "./assets/img/elden-ring.jpg"
   },
   {
     "id": 6,
-    "nombre": "Headset Gamer HyperX Cloud Stinger",
-    "categoria": "Periféricos",
-    "precio": 49990,
-    "descripcion": "Ligero y cómodo para sesiones prolongadas de juego con micrófono giratorio.",
-    "imagen": "assets/img/imagen-headset-gamer.webp"
+    "nombre": "Cyberpunk 2077",
+    "categoria": "RPG",
+    "precio": 29990,
+    "descripcion": "Un RPG de acción y aventura en el mundo abierto de Night City, una megalópolis obsesionada con el poder y las modificaciones corporales.",
+    "imagen": "./assets/img/cyberpunk-2077.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "EA Sports FC 24",
+    "categoria": "Deportes",
+    "precio": 37990,
+    "descripcion": "La experiencia de fútbol más auténtica del mundo con tecnología HyperMotionV y ligas oficiales.",
+    "imagen": "./assets/img/ea-fc-24.jpg"
   }
 ]
