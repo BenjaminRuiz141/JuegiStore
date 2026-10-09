@@ -1,14 +1,14 @@
 import React from 'react'
 
 /**
- * Componente Footer: Pie de pagina de la tienda.
+ * Componente Footer: Pie de página semántico con enlaces de navegación y créditos.
  */
 function Footer() {
   return (
     <footer className="footer py-4 mt-auto">
       <div className="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
         <p className="mb-0 text-secondary small">
-          © 2026 Tienda JuegosxChile - Proyecto Académico Frontend.
+          © 2026 JuegiStore - Evaluación Final Transversal Frontend I (PFY2201).
         </p>
         <div className="d-flex gap-3 small">
           <a href="#catalogo" className="footer-link">
@@ -21,7 +21,7 @@ function Footer() {
             Contacto
           </a>
           <a href="#catalogo" className="footer-link">
-            Volver arriba ↑
+            Volver arriba
           </a>
         </div>
       </div>

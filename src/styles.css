@@ -4,18 +4,19 @@
   --surface-dark: #202024;
   --surface-dark-alt: #29292e;
   --border-dark: #323238;
-  --accent-red: #e92525;
   --accent-cyan: #00b4d8;
-  --accent-blue: #2563eb;
   --accent-price: #15bcdd;
   --text-main: #e1e1e6;
-  --text-muted: #a8a8b3;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--bg-dark);
   color: var(--text-main);
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,12 +27,12 @@ main {
 }
 
 /* Encabezados y Acentos */
-h2, .section-title {
+h2 {
   color: var(--accent-cyan) !important;
 }
 
 .brand-accent {
-  color: var(--accent-red);
+  color: var(--accent-cyan);
 }
 
 /* Navbar */
@@ -43,7 +44,7 @@ h2, .section-title {
 .nav-link {
   color: var(--text-main) !important;
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
   cursor: pointer;
 }
 
@@ -53,44 +54,29 @@ h2, .section-title {
   color: var(--accent-cyan) !important;
 }
 
-/* Tarjetas de Producto */
+/* Tarjetas de Videojuegos */
 .card-theme {
   background-color: var(--surface-dark);
   border: 1px solid var(--border-dark);
-  border-radius: 12px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.card-theme:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
-  border-color: var(--accent-cyan);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .card-img-wrapper {
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25rem;
+  height: 180px;
+  width: 100%;
+  overflow: hidden;
   background-color: var(--surface-dark-alt);
-  border-top-left-radius: 11px;
-  border-top-right-radius: 11px;
 }
 
 .card-img-wrapper img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.card-theme:hover .card-img-wrapper img {
-  transform: scale(1.05);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .precio {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: bold;
   color: var(--accent-price);
 }
@@ -101,7 +87,7 @@ h2, .section-title {
   color: #0b132b;
   font-weight: 600;
   border: none;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-accent:hover {
@@ -113,7 +99,7 @@ h2, .section-title {
 .cart-card {
   background-color: var(--surface-dark);
   border: 1px solid var(--border-dark);
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 .cart-item {
@@ -131,5 +117,5 @@ h2, .section-title {
 .footer-link {
   color: var(--accent-cyan);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
